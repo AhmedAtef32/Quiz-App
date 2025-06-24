@@ -1,0 +1,12 @@
+<div [routerLink]="['/quizz',quizz.quizzId]" class="cursor-pointer" >
+  <div class="quizz__img ">
+    <img class="w-full rounded-3xl" [src]="quizz.quizzImg" [alt]="quizz.quizzTitle">
+  </div>
+
+  <div class="quizz__text   px-3">
+    <h4 class="quizz__Title text-lg font-bold"> {{quizz.quizzTitle}}</h4>
+    <p class="quizz__des text-[#0570b7]"> {{quizz.quizzDesc}} </p>
+  </div>
+</div>
+
+
