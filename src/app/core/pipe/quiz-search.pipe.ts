@@ -7,7 +7,7 @@ import { Quizzes } from '../../features/interfaces/quizzes';
 export class QuizSearchPipe implements PipeTransform {
 
   transform(arr:Quizzes[] , searchValue:string): Quizzes[] {
-    return arr.filter( (a) => a.titleSearch.toLowerCase().includes(searchValue.toLowerCase()) );
+    return arr.filter( (a) => a.quizzTitle.toLowerCase().includes(searchValue.toLowerCase()) );
   }
 
 }

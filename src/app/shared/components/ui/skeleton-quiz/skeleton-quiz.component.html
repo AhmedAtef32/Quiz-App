@@ -1,0 +1,52 @@
+<section>
+  <div class="container">
+    <div class="md:w-[70%] mx-auto px-4 md:px-0">
+      <div class="animate-pulse">
+        <div class="h-2.5 bg-gray-200 rounded-full  w-30 my-4"></div>
+        <div class="h-2 bg-gray-200 rounded-full  w-full mb-2.5"></div>
+
+        <div class="mt-8 mb-4 timer__container">
+          <div class="flex justify-between items-center  gap-3">
+
+            <div class="bg-[#E6EDF5] w-1/2 p-4 rounded-lg text-center h-[50px]">
+            </div>
+            <div class="bg-[#E6EDF5] w-1/2 p-4 rounded-lg text-center h-[50px]">
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center timer gap-3">
+
+            <div class=" w-1/2 p-4  text-center">
+              <div class="h-2.5 bg-gray-200 rounded-full  w-30 my-4 mx-auto"></div>
+            </div>
+            <div class=" w-1/2 p-4  text-center">
+              <div class="h-2.5 bg-gray-200 rounded-full  w-30 my-4 mx-auto"></div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="quizz__container mt-4">
+        <h2 class="question text-2xl font-bold bg-gray-200 h-2"> </h2>
+
+        <div class="answers mt-8">
+          @for (item of skelton(); track $index) {
+            <div class="answer rounded-lg cursor-pointer mt-4">
+            <p class="text-xl font-semibold bg-gray-200 h-2 w-[50%]"> </p>
+          </div>
+          }
+        </div>
+        <div class="flex justify-end  my-8">
+
+          <button  role="button" class="bg-gray-200 text-white px-8 py-5 rounded-lg cursor-pointer">
+
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
