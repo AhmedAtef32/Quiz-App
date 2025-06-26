@@ -33,7 +33,15 @@ export class QuizzComponent implements OnInit , OnDestroy{
   counter:WritableSignal<number> = signal(0);
   isCallingApi:WritableSignal<boolean> = signal(true);
   theExamIsOver:WritableSignal<boolean> = signal(false);
+  btnDisabled:WritableSignal<boolean> = signal(true);
 
+/**
+ * Lifecycle hook that is called after data-bound properties of a component are initialized.
+ * This method checks if the code is running in a browser platform and performs initialization tasks:
+ * - Retrieves the quiz ID from the URL.
+ * - Fetches the quiz data.
+ * - Starts the timer if the API call is in progress.
+ */
 ngOnInit(): void {
   if(isPlatformBrowser(this._PLATFORM_ID)){
     this.getIdFromUrl()
@@ -82,6 +90,7 @@ element.classList.add("bg-[black]!");
 element.classList.add("text-[white]!");
 
 this.answerSelected.set(element.innerText)
+this.btnDisabled.set(false)
 
 
 
@@ -127,6 +136,9 @@ this.correctAnswer.push(this.answerSelected())
   this.removeAnswerClass()
   console.log(this.correctAnswer)
   console.log(this.question)
+  this.answerSelected.set("")
+  this.btnDisabled.set(true)
+
 }
 
 

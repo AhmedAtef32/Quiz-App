@@ -1,11 +1,16 @@
-<div [routerLink]="['/quizz',quizz.quizzId]" class="cursor-pointer" >
-  <div class="quizz__img ">
-    <img class="w-full rounded-3xl" [src]="quizz.quizzImg" [alt]="quizz.quizzTitle">
+<div  >
+  <div class="quizz__img overflow-hidden rounded-3xl">
+    <img class="w-full rounded-3xl scale-125" [src]="quizz.quizzImg" [alt]="quizz.quizzTitle">
   </div>
 
   <div class="quizz__text   px-3">
     <h4 class="quizz__Title text-lg font-bold"> {{quizz.quizzTitle}}</h4>
     <p class="quizz__des text-[#0570b7]"> {{quizz.quizzDesc}} </p>
+  </div>
+  <div class="btn__Start__Quiz mt-4 px-4">
+    <button role="" [routerLink]="['/quizz',quizz.quizzId]" class="block bg-[black]  w-full mx-auto rounded-3xl text-white font-bold py-2 cursor-pointer">
+      Start Quiz
+    </button>
   </div>
 </div>
 
