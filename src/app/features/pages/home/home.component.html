@@ -9,7 +9,7 @@
           class=" rounded-lg w-full py-2 px-4 bg-[#E6EDF5] focus:outline-0 text-[#6989A4]" placeholder=" Search ">
         <i class="pi pi-search absolute top-[50%] translate-[-50%] right-2.5 text-[#6989A4]"></i>
       </div>
-
+      @if(quizSearch == '') {
       <div class="featured__Container my-5">
         <h2 class="text-2xl font-bold my-5">Featured </h2>
 
@@ -20,6 +20,8 @@
         </div>
 
       </div>
+      }
+
 
 
       <div class="All_Quizzes__Container my-5">
@@ -37,5 +39,3 @@
 
   </div>
 </section>
-
-

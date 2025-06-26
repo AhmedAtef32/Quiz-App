@@ -2,40 +2,45 @@
 <section>
   <div class="container mx-auto">
     <div class="md:w-[70%] mx-auto px-4 md:px-0">
-      <h1 class="text-3xl font-bold my-4 text-center">Quiz Result</h1>
+      <h1 class="text-3xl font-bold my-4 text-center animate__animated animate__fadeInUp">Quiz Result</h1>
 
 
-    <div class="mt-8 mb-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="mt-8 mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-        <div class="bg-[#E6EDF5]  p-4 rounded-lg text-center">
-          <p class="text-2xl font-bold">Score </p>
-          <p class="text-2xl font-bold mt-1.5">{{counter()*10}}% </p>
+          <div class="bg-[#E6EDF5]  p-4 rounded-lg text-center animate__animated animate__flipInY">
+            <p class="text-2xl font-bold">Score </p>
+            <p class="text-2xl font-bold mt-1.5">{{counter()*10}}% </p>
+          </div>
+          <div class="bg-[#E6EDF5]    p-4 rounded-lg text-center animate__animated animate__flipInY">
+            <p class="text-2xl font-bold"> Correct Answers</p>
+            <p class="text-2xl font-bold mt-1.5">{{counter()}} </p>
+          </div>
+          <div class="bg-[#E6EDF5]    p-4 rounded-lg text-center animate__animated animate__flipInY">
+            <p class="text-2xl font-bold"> Incorrect Answers</p>
+            <p class="text-2xl font-bold mt-1.5">{{10 - counter()}} </p>
+          </div>
         </div>
-        <div class="bg-[#E6EDF5]    p-4 rounded-lg text-center">
-          <p class="text-2xl font-bold"> Correct Answers</p>
-          <p class="text-2xl font-bold mt-1.5">{{counter()}} </p>
-        </div>
-        <div class="bg-[#E6EDF5]    p-4 rounded-lg text-center">
-          <p class="text-2xl font-bold"> Incorrect Answers</p>
-          <p class="text-2xl font-bold mt-1.5">{{10 - counter()}}  </p>
-        </div>
+
       </div>
 
-    </div>
-
-    <div class="mt-8 mb-4">
+      <div class="mt-8 mb-4">
         <h2 class="text-2xl font-bold">
           Performance Evaluation .</h2>
-          @if (counter() >= 8) {
+        @if (counter() >= 8) {
 
-            <p class="mt-2 text-lg sp"> You performed Well in this Quiz , Demonstrating a strong understanding of the subject matter. Keep up the excellent work!  </p>
-          }@else if (counter() < 8 && counter() >= 5) {
-            <p class="mt-2 text-lg sp"> You performed Adequately in this Quiz, showing a fair understanding of the subject matter. However, there is room for improvement. Consider reviewing the material to enhance your knowledge. </p>
+        <p class="mt-2 text-lg  animate__animated animate__flipInX"> You performed Well in this Quiz , Demonstrating a strong understanding of the
+          subject matter. Keep up the excellent work! </p>
+        }@else if (counter() < 8 && counter()>= 5) {
+          <p class="mt-2 text-lg  animate__animated animate__flipInX"> You performed Adequately in this Quiz, showing a fair understanding of the subject
+            matter. However, there is room for improvement. Consider reviewing the material to enhance your knowledge.
+          </p>
           }@else {
-            <p class="mt-2 text-lg sp"> You performed Poorly in this Quiz, indicating a need for further study and understanding of the subject matter. It's important to review the material thoroughly to improve your performance in future assessments. </p>
+          <p class="mt-2 text-lg  animate__animated animate__flipInX"> You performed Poorly in this Quiz, indicating a need for further study and
+            understanding of the subject matter. It's important to review the material thoroughly to improve your
+            performance in future assessments. </p>
           }
-    </div>
+      </div>
 
       <div class="mt-8 mb-4">
         <button class="block  mx-auto">
@@ -43,11 +48,12 @@
             Take Another Quiz
           </a>
         </button>
+      </div>
     </div>
- </div>
   </div>
 </section>
 }@else {
+
 @if(isCallingApi()){
 <app-skeleton-quiz></app-skeleton-quiz>
 }@else{
@@ -66,10 +72,10 @@
         <div class="flex justify-between items-center  gap-3">
 
           <div class="bg-[#E6EDF5] w-1/2 p-4 rounded-lg text-center">
-            <p class="text-2xl font-bold"> {{minutes()}} </p>
+            <p class="text-2xl font-bold animate-pulse"> {{minutes()}} </p>
           </div>
           <div class="bg-[#E6EDF5] w-1/2 p-4 rounded-lg text-center">
-            <p class="text-2xl font-bold">{{seconds()}}</p>
+            <p class="text-2xl font-bold animate-pulse">{{seconds()}}</p>
           </div>
         </div>
 
@@ -99,7 +105,8 @@
       </div>
       <div class="flex justify-end  my-8">
 
-        <button (click)="btnNext()" [disabled]="btnDisabled()" role="button" class="bg-[BLACK] text-white px-4 py-2 rounded-lg cursor-pointer" [class]="{'opacity-50': btnDisabled()}">
+        <button (click)="btnNext()" [disabled]="btnDisabled()" role="button"
+          class="bg-[BLACK] text-white px-4 py-2 rounded-lg cursor-pointer" [class]="{'opacity-50': btnDisabled()}">
           Next
         </button>
       </div>
